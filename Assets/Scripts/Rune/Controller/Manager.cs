@@ -19,9 +19,10 @@ namespace Rune.Controller
 
         public void DoPurchase()
         {
-            foreach (var data in purchase.PurchaseRandomRunes(4, Rarity.Common, config.runeDatas))
+            foreach (var data in purchase.PurchaseRandomRunes(4, config.Rarity("Common"), config.runeDatas))
             {
-                Debug.Log(data.RaritySprite);
+                Debug.Log(data.RarityConfig);
+                Debug.Log(data);
             }
         }
 

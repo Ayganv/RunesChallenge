@@ -40,7 +40,7 @@ namespace Rune.Controller {
             //if mergeData is <2 or >4
             //return
 
-            var rarity = mergeData.runes[0].Rarity; //current rarity of all runes in list of runes to merge
+            var rarity = mergeData.runes[0].RarityConfig; //current rarity of all runes in list of runes to merge
             var returned = GetRandomType(TypesInList());
 
             switch (mergeData.runes.Count) {

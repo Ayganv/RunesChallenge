@@ -17,12 +17,12 @@ namespace Rune.View
 
         private void UpdateAmount(int num)
         {
-            text.text = num.ToString();
+            //text.text = num.ToString();
         }
 
         private void UpdateImages()
         {
-            rarity.sprite = data.RaritySprite;
+            rarity.sprite = data.RarityConfig.Sprite;
             type.sprite = data.RuneType.Sprite;
         }
     }
