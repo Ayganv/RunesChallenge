@@ -14,13 +14,14 @@ namespace Rune
         private void Awake()
         {
             InstantiateRunes();
+            DoPurchase();
         }
 
         public void DoPurchase()
         {
             foreach (var data in purchase.PurchaseRandomRunes(4, Rarity.Common, config.runeDatas))
             {
-               
+                Debug.Log(data.RaritySprite);
             }
         }
 

@@ -15,6 +15,8 @@ namespace Rune
         public Type RuneType => runeType;
 
         public bool HaveAny => Amount > 0;
+
+        public Sprite RaritySprite => RarityInterpreter.InterpretSpriteFromRarity(rarity);
         
         public int Amount
         {
