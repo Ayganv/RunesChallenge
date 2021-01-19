@@ -7,14 +7,13 @@ namespace Rune.Controller
 {
     public class Purchase
     {
-        public IEnumerable<Data> PurchaseRandomRunes(int amount, Rarity rarity, IEnumerable<Data> datas)
+        public IEnumerable<Data> PurchaseRandomRunes(int amount, List<Data> datas)
         {
-            var possibleDatas = datas.Where(data => data.Rarity == rarity).ToList();
             for (var i = 0; i < amount; i++)
             {
-                var randomNum = Random.Range(0, possibleDatas.Count);
-                yield return possibleDatas[randomNum];
-                possibleDatas[randomNum].Amount++;
+                var randomNum = Random.Range(0, datas.Count);
+                yield return datas[randomNum];
+                datas[randomNum].Amount++;
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Rune.Model;
 using UnityEngine;
@@ -13,6 +14,7 @@ namespace Rune.Controller {
         const float ThreeRuneChance = 55;
         const float FourRuneChance = 95;
         public bool MergeButtonIsActive => mergeData.runes.Count > 1 && mergeData.runes.Count < 5;
+        public event Action<bool> CanMerge; 
 
         #region Testing
 
@@ -46,10 +48,11 @@ namespace Rune.Controller {
 
             var rarity = mergeData.runes[0].Rarity; //current rarity of all runes in list of runes to merge
             var returned = GetRandomType(TypesInList());
-
+            Data data;
             switch (mergeData.runes.Count) {
                 case 2:
                     GetRune(TwoRuneChance, config, rarity);
+                    // TODO Add RuneData Generation data = GeneratedData
                     Debug.Log($"2 Runes inserted : 20% chance");
                     Debug.Log($"Generated = {rarity} {returned} Rune");
                     break;
@@ -69,7 +72,26 @@ namespace Rune.Controller {
                     break;
             }
 
+            // TODO return data;
             return null;
+        }
+
+        public void AddRune(Data data)
+        {
+            mergeData.runes.Add(data);
+            CanMerge?.Invoke(MergeButtonIsActive);
+        }
+        
+        public void RemoveRune(Data data)
+        {
+            mergeData.runes.Remove(data);
+            CanMerge?.Invoke(MergeButtonIsActive);
+        }
+        
+        public void ClearRunes()
+        {
+            mergeData.runes.Clear();
+            CanMerge?.Invoke(MergeButtonIsActive);
         }
 
         bool ShouldUpgradeRune(float chance)

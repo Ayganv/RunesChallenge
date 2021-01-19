@@ -1,25 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using Rune.Model;
+using UnityEngine;
 
 namespace Rune.Controller
 {
     public class Factory
     {
-        private IRuneDataProvider _runeDataProvider;
-        private Transform _parent;
         private GameObject _prefab;
-        public Factory(IRuneDataProvider runeDataProvider, Transform parent, GameObject prefab)
+        public Factory(GameObject prefab)
         {
             _prefab = prefab;
-            _parent = parent;
-            _runeDataProvider = runeDataProvider;
         }
-
-        public void InstantiateRunes()
+        
+        public void InstantiateRunes(Transform parent, IEnumerable<Data> datas)
         {
-            foreach (var rune in _runeDataProvider.ReceiveData())
+            foreach (var data in datas)
             {
-                var instance = Object.Instantiate(_prefab, _parent);
-                instance.GetComponent<View.Rune>().SetUp(rune);
+                var instance = Object.Instantiate(_prefab, parent);
+                instance.GetComponent<View.Rune>().SetUp(data); 
             }
         }
     }

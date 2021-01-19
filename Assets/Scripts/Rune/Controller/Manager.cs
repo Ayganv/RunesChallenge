@@ -4,22 +4,24 @@ using UnityEngine;
 
 namespace Rune.Controller
 {
-    public class Manager : MonoBehaviour, IRuneDataProvider
+    public class Manager : MonoBehaviour
     {
         public Config config;
         public GameObject runePrefab;
+        private Merge _merge;
         private Purchase _purchase;
         private Factory _factory;
 
         private void Awake()
         {
             _purchase = new Purchase();
+            _merge = new Merge();
             InstantiateRunes();
         }
 
         public void DoPurchase()
         {
-            foreach (var data in _purchase.PurchaseRandomRunes(50, config.Rarity(Random.Range(0,5)), config.runeDatas))
+            foreach (var data in _purchase.PurchaseRandomRunes(50, config.GetDatasOfRarity(config.Rarity(Random.Range(0, 5)))))
             {
                 Debug.Log(data.Rarity);
                 Debug.Log(data);
@@ -29,13 +31,28 @@ namespace Rune.Controller
         public void InstantiateRunes()
         {
             if (_factory == null)
-                _factory = new Factory(this, transform, runePrefab);
-            _factory.InstantiateRunes();
+                _factory = new Factory(runePrefab);
+            _factory.InstantiateRunes(transform, config.runeDatas);
         }
-        
-        public IEnumerable<Data> ReceiveData()
+
+        public void AddToMergeArea(View.Rune rune)
         {
-            return config.runeDatas;
+            //TODO
+        }
+
+        public void RemoveFromMergeArea(View.Rune rune)
+        {
+            //TODO
+        }
+
+        public void ClearMergeArea()
+        {
+            //TODO
+        }
+
+        public void Merge()
+        {
+            _factory.InstantiateRunes(transform,new []{_merge.RuneMerge(config)});
         }
     }
 }
