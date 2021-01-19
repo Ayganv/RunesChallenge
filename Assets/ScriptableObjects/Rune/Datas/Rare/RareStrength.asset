@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36b13ec9536fce34692d58e474d53e8b, type: 3}
-  m_Name: IntelligenceEpic
+  m_Name: RareStrength
   m_EditorClassIdentifier: 
-  rarity: 3
-  runeType: {fileID: 11400000, guid: 5b6f5788bfe47e84499e4788b23410a5, type: 2}
+  rarity: 0
+  runeType: {fileID: 11400000, guid: 87e9bfd2390c3f84fba4065402cf40ae, type: 2}
