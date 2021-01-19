@@ -14,13 +14,12 @@ public class GridSetting : MonoBehaviour
     [SerializeField] RatioMode ratioMode;
     [SerializeField] float cellRatio = 1;
  
-    new RectTransform transform;
-    GridLayoutGroup grid;
+    [SerializeField] new RectTransform transform;
+    [SerializeField] private GridLayoutGroup grid;
  
     void Awake()
     {
         transform = (RectTransform)base.transform;
-        grid = GetComponent<GridLayoutGroup>();
     }
  
     // Start is called before the first frame update
