@@ -282,7 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ea23cba4aca46b295dabb9779481e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onAmountChanged:
+  onAmountChangedString:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3592229209036887470}

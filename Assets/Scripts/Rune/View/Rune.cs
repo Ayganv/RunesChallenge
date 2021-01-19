@@ -7,14 +7,14 @@ namespace Rune.View
 {
     public class Rune : MonoBehaviour
     {
-        public UnityEvent<string> onAmountChanged;
+        public UnityEvent<string> onAmountChangedString;
         public Image rarity, type, background;
         public Data data;
         public void SetUp(Data assignedData)
         {
             data = assignedData;
-            onAmountChanged.Invoke(data.Amount.ToString());
-            data.OnAmountChanged += delegate(int i) { onAmountChanged.Invoke(i.ToString()); };
+            onAmountChangedString.Invoke(data.Amount.ToString());
+            data.OnAmountChanged += delegate(int i) { onAmountChangedString.Invoke(i.ToString()); };
             UpdateImages();
         }
 
