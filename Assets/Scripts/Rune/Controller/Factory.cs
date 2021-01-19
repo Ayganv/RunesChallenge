@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Rune
+namespace Rune.Controller
 {
     public class Factory
     {
@@ -19,7 +19,7 @@ namespace Rune
             foreach (var rune in _runeDataProvider.ReceiveData())
             {
                 var instance = Object.Instantiate(_prefab, _parent);
-                instance.GetComponent<Rune>().SetUp(rune);
+                instance.GetComponent<View.Rune>().SetUp(rune);
             }
         }
     }

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Rune.Model;
 using UnityEngine;
 
-namespace Rune
+namespace Rune.Controller
 {
     public class Manager : MonoBehaviour, IRuneDataProvider
     {

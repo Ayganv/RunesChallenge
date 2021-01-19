@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Rune.Model;
 using UnityEngine;
 
-namespace Rune
+namespace Rune.Controller
 {
     public class Purchase : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-﻿namespace Rune
+﻿namespace Rune.Model
 {
     public enum Rarity
     {

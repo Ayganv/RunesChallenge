@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Rune
+namespace Rune.Model
 {
     [CreateAssetMenu(menuName = "Rune/Type")]
     public class Type : ScriptableObject

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Rune
+namespace Rune.Model
 {
     [CreateAssetMenu(menuName = "Rune/Data")]
     public class Data : ScriptableObject

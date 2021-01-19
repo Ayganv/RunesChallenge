@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Rune
+namespace Rune.Model
 {
     [CreateAssetMenu(menuName = "Rune/Config")]
     public class Config : ScriptableObject

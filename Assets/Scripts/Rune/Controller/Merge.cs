@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Rune.Model;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Type = Rune.Model.Type;
 
-namespace Rune {
+namespace Rune.Controller {
     public class Merge : MonoBehaviour {
         public MergeData mergeData;
         public bool MergeButtonIsActive => mergeData.runes.Count > 1 && mergeData.runes.Count < 5;
@@ -24,7 +25,7 @@ namespace Rune {
 
         #endregion
 
-        public Rune RuneMerge() {
+        public View.Rune RuneMerge() {
             //example cases:
             //
             //case 1: insert 3 x str = 1str of same rarity / 1str of higher rarity //55% chance

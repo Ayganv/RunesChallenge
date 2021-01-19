@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Rune.Model;
+using UnityEngine;
 using UnityEngine.UI;
 
-namespace Rune
+namespace Rune.View
 {
     public class Rune : MonoBehaviour
     {

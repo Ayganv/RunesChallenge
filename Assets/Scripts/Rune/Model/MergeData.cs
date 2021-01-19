@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Rune
+namespace Rune.Model
 {
     [System.Serializable]
     public class MergeData

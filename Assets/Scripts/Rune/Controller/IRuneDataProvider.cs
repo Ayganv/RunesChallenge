@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Rune.Model;
 
-namespace Rune
+namespace Rune.Controller
 {
     public interface IRuneDataProvider
     {

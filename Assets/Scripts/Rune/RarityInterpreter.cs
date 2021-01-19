@@ -1,4 +1,5 @@
 ﻿using System;
+using Rune.Model;
 using UnityEngine;
 
 namespace Rune
