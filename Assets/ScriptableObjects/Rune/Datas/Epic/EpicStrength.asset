@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b13ec9536fce34692d58e474d53e8b, type: 3}
   m_Name: EpicStrength
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarity: 3
   runeType: {fileID: 11400000, guid: 87e9bfd2390c3f84fba4065402cf40ae, type: 2}
