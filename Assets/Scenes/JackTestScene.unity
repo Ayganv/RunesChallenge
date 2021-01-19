@@ -233,6 +233,8 @@ GameObject:
   - component: {fileID: 1059539675}
   - component: {fileID: 1059539677}
   - component: {fileID: 1059539676}
+  - component: {fileID: 1059539679}
+  - component: {fileID: 1059539678}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -297,6 +299,47 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059539674}
   m_CullTransparentMesh: 0
+--- !u!114 &1059539678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059539674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9870e23846e1094798fc32fbf7ca726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 6d16fc83c7ed4744bb2c6e7a9bcdba16, type: 2}
+  purchase: {fileID: 0}
+  runePrefab: {fileID: 6530802289282894773, guid: c5129a42a099ff54d894ec5bd6e4cf7d, type: 3}
+--- !u!114 &1059539679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059539674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1 &1408214628
 GameObject:
   m_ObjectHideFlags: 0
