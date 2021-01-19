@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b13ec9536fce34692d58e474d53e8b, type: 3}
   m_Name: LegendaryStrength
   m_EditorClassIdentifier: 
-  rarityConfig: {fileID: 11400000, guid: 17c5ccdf8fdfadc46be13d7c26115f4d, type: 2}
+  rarity: {fileID: 11400000, guid: 17c5ccdf8fdfadc46be13d7c26115f4d, type: 2}
   runeType: {fileID: 11400000, guid: 87e9bfd2390c3f84fba4065402cf40ae, type: 2}

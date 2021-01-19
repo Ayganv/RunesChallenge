@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b13ec9536fce34692d58e474d53e8b, type: 3}
   m_Name: LegendaryAgiliy
   m_EditorClassIdentifier: 
-  rarityConfig: {fileID: 11400000, guid: 17c5ccdf8fdfadc46be13d7c26115f4d, type: 2}
+  rarity: {fileID: 11400000, guid: 17c5ccdf8fdfadc46be13d7c26115f4d, type: 2}
   runeType: {fileID: 11400000, guid: e99bebdb6ba148940a6863cea3ee74a9, type: 2}
