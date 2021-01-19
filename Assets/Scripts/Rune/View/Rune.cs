@@ -13,6 +13,7 @@ namespace Rune.View
         public void SetUp(Data data)
         {
             this.data = data;
+            onAmountChanged.Invoke(data.Amount.ToString());
             data.OnAmountChanged += delegate(int i) { onAmountChanged.Invoke(i.ToString()); };
             UpdateImages();
         }
