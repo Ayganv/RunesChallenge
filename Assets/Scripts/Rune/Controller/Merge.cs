@@ -8,91 +8,52 @@ using Rune.View;
 using Type = Rune.Model.Type;
 
 namespace Rune.Controller {
-    public class Merge : MonoBehaviour {
+    public class Merge {
         public MergeData mergeData;
+
         const float TwoRuneChance = 20;
         const float ThreeRuneChance = 55;
         const float FourRuneChance = 95;
-        public bool MergeButtonIsActive => mergeData.runes.Count > 1 && mergeData.runes.Count < 5;
-        public event Action<bool> CanMerge; 
 
-        #region Testing
 
-        [SerializeField]
-        private Data[] sdk;
-
-        private void Start() {
-            foreach (var VARIABLE in sdk) {
-                mergeData.runes.Add(VARIABLE);
-            }
-
-            //RuneMerge();
+        public Merge(MergeData mergeData) {
+            this.mergeData = mergeData;
         }
-
-        #endregion
-
         public Data RuneMerge(Config config) {
-            //example cases:
-            //
-            //case 1: insert 3 x str = 1str of same rarity / 1str of higher rarity //55% chance
-            //case 2: insert 2 x int = 1int of same rarity / 1str of higher rarity //20% chance
-            //case 3: insert 1 x str, 1 x agi, 1 x intel = 1 of 3 Randomly
-            //
-            //ONLY SAME RARITY
-            //Legendary can not be merged
-            //Can only return a rune of the same type as one in the list
-            //
-            //
-            //if mergeData is <2 or >4
-            //return
-
-            var rarity = mergeData.runes[0].Rarity; //current rarity of all runes in list of runes to merge
-            var returned = GetRandomType(TypesInList());
-            Data data;
+            Data runeData;
+            var rarity = mergeData.runes[0].Rarity;
             switch (mergeData.runes.Count) {
                 case 2:
-                    GetRune(TwoRuneChance, config, rarity);
-                    // TODO Add RuneData Generation data = GeneratedData
-                    Debug.Log($"2 Runes inserted : 20% chance");
-                    Debug.Log($"Generated = {rarity} {returned} Rune");
+                    runeData = RuneData(TwoRuneChance, config, rarity);
                     break;
-
                 case 3:
-                    Debug.Log("3 Runes inserted : 55% chance of better rarity");
-                    Debug.Log($"Generated = {rarity} {returned} Rune");
+                    runeData = RuneData(ThreeRuneChance, config, rarity);
                     break;
-
                 case 4:
-                    Debug.Log("4 Runes inserted : 95% chance of better rarity");
-                    Debug.Log($"Generated = {rarity} {returned} Rune");
+                    runeData = RuneData(FourRuneChance, config, rarity);
                     break;
-
                 default:
-                    Debug.Log("Invalid amount of runes attempted to be merged.");
-                    break;
+                    return null;
             }
 
-            // TODO return data;
-            return null;
+            this.mergeData.ClearRunes();
+            return runeData;
         }
 
-        public void AddRune(Data data)
-        {
-            mergeData.runes.Add(data);
-            CanMerge?.Invoke(MergeButtonIsActive);
+        Data RuneData(float chance, Config config, Rarity rarity) {
+            var returned = GetRandomType(TypesInList());
+            var result = GetRune(chance, config, rarity);
+            Data rune = null;
+
+            foreach (var runeData in config.runeDatas) {
+                if (result == runeData.Rarity && returned == runeData.RuneType) {
+                    rune = runeData;
+                }
+            }
+
+            return rune;
         }
-        
-        public void RemoveRune(Data data)
-        {
-            mergeData.runes.Remove(data);
-            CanMerge?.Invoke(MergeButtonIsActive);
-        }
-        
-        public void ClearRunes()
-        {
-            mergeData.runes.Clear();
-            CanMerge?.Invoke(MergeButtonIsActive);
-        }
+
 
         bool ShouldUpgradeRune(float chance)
             => Random.Range(0, 101) <= chance;
