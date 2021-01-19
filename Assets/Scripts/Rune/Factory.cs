@@ -4,16 +4,21 @@ namespace Rune
 {
     public class Factory
     {
+        private IRuneDataProvider _runeDataProvider;
+        private Transform _parent;
+        private GameObject _prefab;
         public Factory(IRuneDataProvider runeDataProvider, Transform parent, GameObject prefab)
         {
-            InstantiateRunes(runeDataProvider, parent, prefab);
+            _prefab = prefab;
+            _parent = parent;
+            _runeDataProvider = runeDataProvider;
         }
 
-        private void InstantiateRunes(IRuneDataProvider iRuneDataProvider, Transform parent, GameObject prefab)
+        public void InstantiateRunes()
         {
-            foreach (var rune in iRuneDataProvider.ReceiveData())
+            foreach (var rune in _runeDataProvider.ReceiveData())
             {
-                var instance = Object.Instantiate(prefab, parent);
+                var instance = Object.Instantiate(_prefab, _parent);
                 instance.GetComponent<Rune>().SetUp(rune);
             }
         }
