@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b13ec9536fce34692d58e474d53e8b, type: 3}
   m_Name: CommonAgility
   m_EditorClassIdentifier: 
-  rarity: 0
+  rarityConfig: {fileID: 11400000, guid: a40724ad98de339499c7a2d40003dd9e, type: 2}
   runeType: {fileID: 11400000, guid: e99bebdb6ba148940a6863cea3ee74a9, type: 2}
