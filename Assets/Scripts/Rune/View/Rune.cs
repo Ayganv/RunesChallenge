@@ -8,11 +8,11 @@ namespace Rune.View
     public class Rune : MonoBehaviour
     {
         public UnityEvent<string> onAmountChanged;
-        public Image rarity, type;
+        public Image rarity, type, background;
         public Data data;
-        public void SetUp(Data data)
+        public void SetUp(Data assignedData)
         {
-            this.data = data;
+            data = assignedData;
             onAmountChanged.Invoke(data.Amount.ToString());
             data.OnAmountChanged += delegate(int i) { onAmountChanged.Invoke(i.ToString()); };
             UpdateImages();
@@ -22,6 +22,7 @@ namespace Rune.View
         {
             rarity.sprite = data.RarityConfig.Sprite;
             type.sprite = data.RuneType.Sprite;
+            background.color = data.RuneType.Color;
         }
     }
 }

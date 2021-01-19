@@ -9,8 +9,13 @@ namespace Rune.Model
         [SerializeField] private RarityConfig rarityConfig;
         [SerializeField] private Type runeType;
         private int _amount;
-        public event Action<int> OnAmountChanged; 
-        
+        public event Action<int> OnAmountChanged;
+
+        private void OnValidate()
+        {
+            _amount = 0;
+        }
+
         public RarityConfig RarityConfig => rarityConfig;
         public Type RuneType => runeType;
 

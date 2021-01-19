@@ -299,6 +299,7 @@ MonoBehaviour:
         m_CallState: 2
   rarity: {fileID: 5796461288025654754}
   type: {fileID: 6157741550530953532}
+  background: {fileID: 2308372130851222321}
   data: {fileID: 0}
 --- !u!222 &8824096917863488044
 CanvasRenderer:
