@@ -3,11 +3,15 @@ using System.Linq;
 using Rune.Model;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Rune.View;
 using Type = Rune.Model.Type;
 
 namespace Rune.Controller {
     public class Merge : MonoBehaviour {
         public MergeData mergeData;
+        const float TwoRuneChance = 20;
+        const float ThreeRuneChance = 55;
+        const float FourRuneChance = 95;
         public bool MergeButtonIsActive => mergeData.runes.Count > 1 && mergeData.runes.Count < 5;
 
         #region Testing
@@ -20,12 +24,12 @@ namespace Rune.Controller {
                 mergeData.runes.Add(VARIABLE);
             }
 
-            RuneMerge();
+            //RuneMerge();
         }
 
         #endregion
 
-        public View.Rune RuneMerge() {
+        public Data RuneMerge(Config config) {
             //example cases:
             //
             //case 1: insert 3 x str = 1str of same rarity / 1str of higher rarity //55% chance
@@ -45,7 +49,7 @@ namespace Rune.Controller {
 
             switch (mergeData.runes.Count) {
                 case 2:
-
+                    GetRune(TwoRuneChance, config, rarity);
                     Debug.Log($"2 Runes inserted : 20% chance");
                     Debug.Log($"Generated = {rarity} {returned} Rune");
                     break;
@@ -71,6 +75,13 @@ namespace Rune.Controller {
         bool ShouldUpgradeRune(float chance)
             => Random.Range(0, 101) <= chance;
 
+        RarityConfig GetRune(float chance, Config rarityConfig, RarityConfig rarity) {
+            if (ShouldUpgradeRune(chance)) {
+                return rarityConfig.NextRarity(rarity.name);
+            }
+
+            return rarity;
+        }
 
         private HashSet<Type> TypesInList() {
             var typesInMergeList = new HashSet<Type>();
