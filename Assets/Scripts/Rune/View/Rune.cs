@@ -20,7 +20,7 @@ namespace Rune.View
 
         private void UpdateImages()
         {
-            rarity.sprite = data.RarityConfig.Sprite;
+            rarity.sprite = data.Rarity.Sprite;
             type.sprite = data.RuneType.Sprite;
             background.color = data.RuneType.Color;
         }

@@ -44,7 +44,7 @@ namespace Rune.Controller {
             //if mergeData is <2 or >4
             //return
 
-            var rarity = mergeData.runes[0].RarityConfig; //current rarity of all runes in list of runes to merge
+            var rarity = mergeData.runes[0].Rarity; //current rarity of all runes in list of runes to merge
             var returned = GetRandomType(TypesInList());
 
             switch (mergeData.runes.Count) {
@@ -75,7 +75,7 @@ namespace Rune.Controller {
         bool ShouldUpgradeRune(float chance)
             => Random.Range(0, 101) <= chance;
 
-        RarityConfig GetRune(float chance, Config rarityConfig, RarityConfig rarity) {
+        Rarity GetRune(float chance, Config rarityConfig, Rarity rarity) {
             if (ShouldUpgradeRune(chance)) {
                 return rarityConfig.NextRarity(rarity.name);
             }

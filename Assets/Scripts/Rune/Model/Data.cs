@@ -6,7 +6,7 @@ namespace Rune.Model
     [CreateAssetMenu(menuName = "Rune/Data")]
     public class Data : ScriptableObject
     {
-        [SerializeField] private RarityConfig rarityConfig;
+        [SerializeField] private Rarity rarity;
         [SerializeField] private Type runeType;
         private int _amount;
         public event Action<int> OnAmountChanged;
@@ -16,7 +16,7 @@ namespace Rune.Model
             _amount = 0;
         }
 
-        public RarityConfig RarityConfig => rarityConfig;
+        public Rarity Rarity => rarity;
         public Type RuneType => runeType;
 
         public bool HaveAny => Amount > 0;

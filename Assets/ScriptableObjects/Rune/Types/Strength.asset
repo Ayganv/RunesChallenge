@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Strength
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 70a4811ac2b5a1d46b738ba2ff8ea5fc, type: 3}
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 0.7075472, g: 0.100105464, b: 0, a: 1}

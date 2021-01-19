@@ -7,21 +7,21 @@ namespace Rune.Controller
     public class Manager : MonoBehaviour, IRuneDataProvider
     {
         public Config config;
-        public Purchase purchase;
         public GameObject runePrefab;
+        private Purchase _purchase;
         private Factory _factory;
 
         private void Awake()
         {
+            _purchase = new Purchase();
             InstantiateRunes();
-            DoPurchase();
         }
 
         public void DoPurchase()
         {
-            foreach (var data in purchase.PurchaseRandomRunes(4, config.Rarity("Common"), config.runeDatas))
+            foreach (var data in _purchase.PurchaseRandomRunes(50, config.Rarity(Random.Range(0,5)), config.runeDatas))
             {
-                Debug.Log(data.RarityConfig);
+                Debug.Log(data.Rarity);
                 Debug.Log(data);
             }
         }

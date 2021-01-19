@@ -2,8 +2,8 @@
 
 namespace Rune.Model
 {
-    [CreateAssetMenu(menuName = "Rune/Rarity Config")]
-    public class RarityConfig : ScriptableObject
+    [CreateAssetMenu(menuName = "Rune/Rarity")]
+    public class Rarity : ScriptableObject
     {
         [SerializeField] private Sprite sprite;
         
