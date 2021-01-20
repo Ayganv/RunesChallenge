@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Rune.View;
-using UnityEngine;
 
 namespace Rune.Model {
     [Serializable]

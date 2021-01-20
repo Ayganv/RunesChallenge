@@ -1,5 +1,4 @@
-﻿using System;
-using Rune.Controller;
+﻿using Rune.Controller;
 using UnityEngine;
 using UnityEngine.UI;
 

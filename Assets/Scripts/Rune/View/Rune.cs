@@ -3,7 +3,6 @@ using Rune.Controller;
 using Rune.Model;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Rune.View {
@@ -13,7 +12,6 @@ namespace Rune.View {
         public Data data;
         public GameObject QuantityDisplay;
         
-
         public void SetUp(Data assignedData) {
             data = assignedData;
             onAmountChangedString.Invoke(data.Amount.ToString());
@@ -47,6 +45,5 @@ namespace Rune.View {
         public void QuantityDisplayTextToggle(bool isActive){
             QuantityDisplay.SetActive(isActive);
         }
-
     }
 }

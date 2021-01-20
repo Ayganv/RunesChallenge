@@ -1,28 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Rune.Model;
-using UnityEngine;
 using Random = UnityEngine.Random;
-using Rune.View;
 using Type = Rune.Model.Type;
 
 namespace Rune.Controller {
     public class Merge {
-        public MergeData mergeData;
+        public MergeData MergeData;
 
         const float TwoRuneChance = 20;
         const float ThreeRuneChance = 55;
         const float FourRuneChance = 95;
 
-
         public Merge(MergeData mergeData) {
-            this.mergeData = mergeData;
+            this.MergeData = mergeData;
         }
         public Data RuneMerge(Config config) {
             Data runeData;
-            var rarity = mergeData.runes[0].Rarity;
-            switch (mergeData.runes.Count) {
+            var rarity = MergeData.runes[0].Rarity;
+            switch (MergeData.runes.Count) {
                 case 2:
                     runeData = RuneData(TwoRuneChance, config, rarity);
                     break;
@@ -37,7 +33,7 @@ namespace Rune.Controller {
             }
 
             runeData.Amount++;
-            this.mergeData.SuccessfulMerge();
+            this.MergeData.SuccessfulMerge();
             return runeData;
         }
 
@@ -55,7 +51,6 @@ namespace Rune.Controller {
             return rune;
         }
 
-
         bool ShouldUpgradeRune(float chance)
             => Random.Range(0, 101) <= chance;
 
@@ -70,7 +65,7 @@ namespace Rune.Controller {
         private HashSet<Type> TypesInList() {
             var typesInMergeList = new HashSet<Type>();
 
-            foreach (var rune in mergeData.runes) {
+            foreach (var rune in MergeData.runes) {
                 typesInMergeList.Add(rune.RuneType);
             }
 

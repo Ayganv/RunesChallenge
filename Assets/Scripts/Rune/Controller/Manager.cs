@@ -1,7 +1,6 @@
 ﻿using System;
 using Rune.Model;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace Rune.Controller {
     public class Manager : MonoBehaviour {
@@ -20,11 +19,8 @@ namespace Rune.Controller {
             InstantiateRunes();
         }
 
-
         public void DoPurchase() {
-            foreach (var data in _purchase.PurchaseRandomRunes(4, config.GetDatasOfRarity(config.Rarity("Common")))) {
- 
-            }
+            foreach (var data in _purchase.PurchaseRandomRunes(4, config.GetDatasOfRarity(config.Rarity("Common")))) { }
         }
 
         public void InstantiateRunes() {
@@ -35,24 +31,23 @@ namespace Rune.Controller {
 
         public void AddToMergeArea(View.Rune rune)
         {
-            if (this._merge.mergeData.AddRune(rune.data))
+            if (this._merge.MergeData.AddRune(rune.data))
             {
                 var instance = this._factory.InstantiateMergeRune(this.mergeArea, rune.data);
                 instance.GetComponent<View.Rune>().QuantityDisplayTextToggle(false);
             }
             OnDrop?.Invoke();
             OnDrop = null;
-
             //TODO
         }
 
         public void SubscribeToMergeDataEvent(Action<bool> action)
         {
-            _merge.mergeData.OnMergeDataChange += action;
+            _merge.MergeData.OnMergeDataChange += action;
         }
 
         public void RemoveFromMergeArea(View.Rune rune) {
-            this._merge.mergeData.RemoveRune(rune);
+            this._merge.MergeData.RemoveRune(rune);
             OnDrop?.Invoke();
             OnDrop = null;
             //TODO
@@ -64,7 +59,7 @@ namespace Rune.Controller {
 
         public void Merge() {
             var result = _factory.InstantiateResult(mergeResult, _merge.RuneMerge(config));
-            _merge.mergeData.AddResult(result.GetComponent<View.Rune>());
+            _merge.MergeData.AddResult(result.GetComponent<View.Rune>());
             result.GetComponent<View.Rune>().QuantityDisplayTextToggle(false);
             result.GetComponent<View.Rune>().SubscribeToDrag(ref OnDrop);
         }

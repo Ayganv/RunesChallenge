@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Rune.View
 {
     [ExecuteInEditMode]
-    [RequireComponent(typeof(UnityEngine.UI.GridLayoutGroup))]
+    [RequireComponent(typeof(GridLayoutGroup))]
     public class GridSetting : MonoBehaviour
     {
         public enum Axis { X, Y };
@@ -22,7 +22,6 @@ namespace Rune.View
             transform = (RectTransform)base.transform;
         }
  
-        // Start is called before the first frame update
         void Start()
         {
             UpdateCellSize();

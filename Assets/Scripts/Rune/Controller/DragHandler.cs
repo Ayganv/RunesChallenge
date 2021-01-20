@@ -44,9 +44,9 @@ namespace Rune.Controller
             var rt = m_DraggingIcon.GetComponent<RectTransform>();
             Vector3 globalMousePos;
             if (RectTransformUtility.ScreenPointToWorldPointInRectangle(m_DraggingPlane, data.position,
-                data.pressEventCamera, out globalMousePos)){
+                data.pressEventCamera, out globalMousePos)) {
                 rt.position = globalMousePos;
-                rt.rotation = m_DraggingPlane.rotation;
+                if (!(m_DraggingPlane is null)) rt.rotation = m_DraggingPlane.rotation;
             }
         }
 
