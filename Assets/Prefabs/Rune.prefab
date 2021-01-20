@@ -166,6 +166,9 @@ GameObject:
   - component: {fileID: 7919849737178615702}
   - component: {fileID: 7919849737178615703}
   - component: {fileID: 7919849737178615700}
+  - component: {fileID: 6204014624466355274}
+  - component: {fileID: 1417084188005714016}
+  - component: {fileID: 2695065074633713012}
   m_Layer: 5
   m_Name: Rune
   m_TagString: Untagged
@@ -275,6 +278,64 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6204014624466355274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919849737178615698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ea23cba4aca46b295dabb9779481e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAmountChangedString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7919849736013172721}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  rarity: {fileID: 7919849735975679680}
+  type: {fileID: 7919849737241887732}
+  background: {fileID: 7919849737178615703}
+  data: {fileID: 0}
+  QuantityDisplay: {fileID: 8896757976824546141}
+--- !u!114 &1417084188005714016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919849737178615698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba6c3787af7eb8438394c90d6b27b73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragOnSurfaces: 1
+  m_DraggingIcon: {fileID: 0}
+--- !u!225 &2695065074633713012
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7919849737178615698}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &7919849737241887730
 GameObject:
   m_ObjectHideFlags: 0

@@ -26,6 +26,10 @@ namespace Rune.Controller
         public GameObject InstantiateResult(Transform parent, Data data)
         {
             var instance = Object.Instantiate(_prefab, parent);
+            instance.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f, 0.5f);
+            instance.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f, 0.5f);
+            var rect = parent as RectTransform;
+            instance.GetComponent<RectTransform>().sizeDelta = rect.sizeDelta;
             instance.GetComponent<View.Rune>().SetUp(data);
             return instance;
         }

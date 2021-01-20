@@ -8,14 +8,8 @@ namespace Rune.Model
     {
         [SerializeField] private Rarity rarity;
         [SerializeField] private Type runeType;
-        private int _amount;
         public event Action<int> OnAmountChanged;
         public event Action OnRuneMoved;
-
-        private void OnValidate()
-        {
-            _amount = 0;
-        }
 
         public void RuneMoved()
         {
@@ -29,11 +23,11 @@ namespace Rune.Model
         
         public int Amount
         {
-            get => _amount;
+            get => PlayerPrefs.GetInt(name, 0);
             set
             {
-               _amount = Mathf.Clamp(value, 0, Int32.MaxValue);
-               OnAmountChanged?.Invoke(_amount);
+               PlayerPrefs.SetInt(name, Mathf.Clamp(value, 0, Int32.MaxValue));
+               OnAmountChanged?.Invoke(Amount);
             } 
         }
     }

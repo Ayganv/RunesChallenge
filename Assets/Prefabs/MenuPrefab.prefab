@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4217081343477429953}
   - component: {fileID: 4217081343477429952}
   - component: {fileID: 4217081343477429959}
+  - component: {fileID: 1146400009}
   m_Layer: 5
   m_Name: MergeButton
   m_TagString: Untagged
@@ -190,7 +191,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 4217081343477429952}
   m_OnClick:
     m_PersistentCalls:
@@ -207,6 +208,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1146400009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217081343477429957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b88c63859bb504b9a131706b78215f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4217081343589161668
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   config: {fileID: 11400000, guid: 6d16fc83c7ed4744bb2c6e7a9bcdba16, type: 2}
-  runePrefab: {fileID: 6530802289282894773, guid: c5129a42a099ff54d894ec5bd6e4cf7d, type: 3}
+  runePrefab: {fileID: 7919849737178615698, guid: d6747bcafac0afe409a3996dffb3444c, type: 3}
   mergeArea: {fileID: 4217081344400460331}
   mergeResult: {fileID: 4217081344923806991}
 --- !u!114 &1545714722

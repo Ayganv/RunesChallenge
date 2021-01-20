@@ -8,7 +8,7 @@ namespace Rune.Controller {
         public Config config;
         public GameObject runePrefab;
         public Transform mergeArea, mergeResult;
-        Merge _merge;
+        private Merge _merge;
         public event Action OnDrop;
         private Purchase _purchase;
         private Factory _factory;
@@ -22,9 +22,8 @@ namespace Rune.Controller {
 
 
         public void DoPurchase() {
-            foreach (var data in _purchase.PurchaseRandomRunes(3, config.GetDatasOfRarity(config.Rarity(Random.Range(0, 2))))) {
-                Debug.Log(data.Rarity);
-                Debug.Log(data);
+            foreach (var data in _purchase.PurchaseRandomRunes(4, config.GetDatasOfRarity(config.Rarity("Common")))) {
+ 
             }
         }
 
@@ -45,6 +44,11 @@ namespace Rune.Controller {
             OnDrop = null;
 
             //TODO
+        }
+
+        public void SubscribeToMergeDataEvent(Action<bool> action)
+        {
+            _merge.mergeData.OnMergeDataChange += action;
         }
 
         public void RemoveFromMergeArea(View.Rune rune) {

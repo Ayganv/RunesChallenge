@@ -12,8 +12,7 @@ namespace Rune.View{
         public void OnDrop(PointerEventData eventData){
             if(eventData.pointerDrag != null)
             {
-                Debug.Log(eventData.ToString());
-                
+
                 FindObjectOfType<Manager>().AddToMergeArea(DraggedObject.GetComponent<Rune>());
                 Destroy(draggingIcon);
             }

@@ -18,7 +18,6 @@ namespace Rune.Model {
                 CancelMerge();
             else if (this.runes.Count > 3) return false;
             
-            Debug.Log($"Added: {data} wadddaup");
             this.runes.Add(data);
             this.OnMergeDataChange?.Invoke(this.CanMerge);
             data.Amount--;
