@@ -1001,7 +1001,7 @@ GameObject:
   - component: {fileID: 9011238626940626157}
   - component: {fileID: 6265472809870033312}
   - component: {fileID: 6265472809870033313}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: MergeGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
