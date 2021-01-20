@@ -24,16 +24,18 @@ namespace Rune.View {
 
         public void ListenToRuneMove()
         {
-            data.OnRuneMoved += Destroy;
+            data.OnRuneMoved += DestroyThis;
         }
 
-        private void Destroy(bool state)
+        public void SubscribeToDrag(ref Action dropEvent)
         {
-            if (state == false)
-            {
-                GameObject.Destroy(gameObject);
-                data.OnRuneMoved -= Destroy;
-            }
+            dropEvent += DestroyThis;
+        }
+
+        public void DestroyThis()
+        {
+            Destroy(gameObject);
+            data.OnRuneMoved -= DestroyThis;
         }
 
         private void UpdateImages() {

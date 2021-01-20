@@ -9,6 +9,7 @@ namespace Rune.Controller {
         public GameObject runePrefab;
         public Transform mergeArea, mergeResult;
         Merge _merge;
+        public event Action OnDrop;
         private Purchase _purchase;
         private Factory _factory;
 
@@ -36,11 +37,20 @@ namespace Rune.Controller {
         public void AddToMergeArea(View.Rune rune)
         {
             if (this._merge.mergeData.AddRune(rune.data))
-                this._factory.InstantiateRune(this.mergeArea, rune.data);
+            {
+                var instance = this._factory.InstantiateMergeRune(this.mergeArea, rune.data);
+                instance.GetComponent<View.Rune>().QuantityDisplayTextToggle(false);
+            }
+            OnDrop?.Invoke();
+            OnDrop = null;
+
             //TODO
         }
 
         public void RemoveFromMergeArea(View.Rune rune) {
+            this._merge.mergeData.RemoveRune(rune);
+            OnDrop?.Invoke();
+            OnDrop = null;
             //TODO
         }
 
@@ -49,7 +59,10 @@ namespace Rune.Controller {
         }
 
         public void Merge() {
-            _factory.InstantiateRunes(mergeResult, new[] {_merge.RuneMerge(config)});
+            var result = _factory.InstantiateResult(mergeResult, _merge.RuneMerge(config));
+            _merge.mergeData.AddResult(result.GetComponent<View.Rune>());
+            result.GetComponent<View.Rune>().QuantityDisplayTextToggle(false);
+            result.GetComponent<View.Rune>().SubscribeToDrag(ref OnDrop);
         }
     }
 }

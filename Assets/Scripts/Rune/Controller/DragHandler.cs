@@ -25,6 +25,9 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         m_DraggingPlane = transform as RectTransform;
 
         FindObjectOfType<MergeAreaDropHandler>().DraggedObject = gameObject;
+        FindObjectOfType<InventoryDropHandler>().DraggedObject = gameObject;
+        FindObjectOfType<InventoryDropHandler>().draggingIcon = m_DraggingIcon;
+        FindObjectOfType<MergeAreaDropHandler>().draggingIcon = m_DraggingIcon;
         SetDraggedPosition(eventData);
     }
 

@@ -23,7 +23,14 @@ namespace Rune.Controller
             }
         }
         
-        public GameObject InstantiateRune(Transform parent, Data data)
+        public GameObject InstantiateResult(Transform parent, Data data)
+        {
+            var instance = Object.Instantiate(_prefab, parent);
+            instance.GetComponent<View.Rune>().SetUp(data);
+            return instance;
+        }
+        
+        public GameObject InstantiateMergeRune(Transform parent, Data data)
         {
             var instance = Object.Instantiate(_prefab, parent);
             instance.GetComponent<View.Rune>().SetUp(data);

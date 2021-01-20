@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 
 namespace Rune.View{
     
-    public class MergeAreaDropHandler : MonoBehaviour, IDropHandler{
+    public class InventoryDropHandler : MonoBehaviour, IDropHandler{
         
         public GameObject DraggedObject, draggingIcon;
         
@@ -14,7 +14,7 @@ namespace Rune.View{
             {
                 Debug.Log(eventData.ToString());
                 
-                FindObjectOfType<Manager>().AddToMergeArea(DraggedObject.GetComponent<Rune>());
+                FindObjectOfType<Manager>().RemoveFromMergeArea(DraggedObject.GetComponent<Rune>());
                 Destroy(draggingIcon);
             }
         }
