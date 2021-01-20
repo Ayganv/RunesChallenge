@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2308372130851222321}
   - component: {fileID: 7179925719257588275}
   - component: {fileID: 6937375928046941809}
+  - component: {fileID: -7410935759672614416}
   m_Layer: 0
   m_Name: TestRune
   m_TagString: Untagged
@@ -303,6 +304,7 @@ MonoBehaviour:
   type: {fileID: 6157741550530953532}
   background: {fileID: 2308372130851222321}
   data: {fileID: 0}
+  QuantityDisplay: {fileID: 8452257564404943050}
 --- !u!222 &8824096917863488044
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -354,6 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragOnSurfaces: 1
+  m_DraggingIcon: {fileID: 0}
 --- !u!114 &6937375928046941809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -397,6 +400,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!225 &-7410935759672614416
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530802289282894773}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8452257564404943050
 GameObject:
   m_ObjectHideFlags: 0
