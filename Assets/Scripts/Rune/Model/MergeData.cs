@@ -43,7 +43,7 @@ namespace Rune.Model {
             foreach (var rune in runes)
             {
                 rune.RuneMoved(false);
-                if (successful)
+                if (!successful)
                 {
                     rune.Amount++;
                 }

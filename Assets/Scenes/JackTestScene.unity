@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!224 &921417573 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 4217081344923806991, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-  m_PrefabInstance: {fileID: 1115980943}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1115980943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,41 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1047360737598094170, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: mergeResult
-      value: 
-      objectReference: {fileID: 921417573}
     - target: {fileID: 1259638700872412953, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
       propertyPath: m_CellSize.x
-      value: 234.45123
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1273086847}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Merge
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Rune.Controller.Manager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081343477429959, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 652.1765
       objectReference: {fileID: 0}
     - target: {fileID: 4217081343589161664, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
       propertyPath: m_Pivot.x
@@ -260,30 +223,11 @@ PrefabInstance:
       value: MenuPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 4217081345156748688, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_StartAxis
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081345156748688, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
       propertyPath: m_CellSize.x
-      value: 251.56099
-      objectReference: {fileID: 0}
-    - target: {fileID: 4217081345156748688, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-      propertyPath: m_Constraint
-      value: 0
+      value: 585.7412
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
---- !u!114 &1273086847 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1047360737598094170, guid: 435ab5402ea065c47a5736df7e201793, type: 3}
-  m_PrefabInstance: {fileID: 1115980943}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9870e23846e1094798fc32fbf7ca726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1408214628
 GameObject:
   m_ObjectHideFlags: 0

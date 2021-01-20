@@ -194,7 +194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4217081343477429952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1273086847}
+        m_TargetAssemblyTypeName: Rune.Controller.Manager, Assembly-CSharp
+        m_MethodName: Merge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4217081343589161668
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +978,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4217081344939666448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1273086847}
+        m_TargetAssemblyTypeName: Rune.Controller.Manager, Assembly-CSharp
+        m_MethodName: DoPurchase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4217081345052670531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,6 +1083,7 @@ GameObject:
   - component: {fileID: 4217081345156748693}
   - component: {fileID: 4217081345156748688}
   - component: {fileID: 4217081345156748695}
+  - component: {fileID: 1273086847}
   m_Layer: 5
   m_Name: InventoryGrid
   m_TagString: Untagged
@@ -1142,10 +1167,10 @@ MonoBehaviour:
     m_Bottom: 20
   m_ChildAlignment: 0
   m_StartCorner: 0
-  m_StartAxis: 0
+  m_StartAxis: 1
   m_CellSize: {x: -108, y: 175}
   m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
+  m_Constraint: 1
   m_ConstraintCount: 5
 --- !u!114 &4217081345156748695
 MonoBehaviour:
@@ -1164,3 +1189,19 @@ MonoBehaviour:
   cellRatio: 1
   transform: {fileID: 4217081345156748692}
   grid: {fileID: 4217081345156748688}
+--- !u!114 &1273086847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4217081345156748395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9870e23846e1094798fc32fbf7ca726, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  config: {fileID: 11400000, guid: 6d16fc83c7ed4744bb2c6e7a9bcdba16, type: 2}
+  runePrefab: {fileID: 6530802289282894773, guid: c5129a42a099ff54d894ec5bd6e4cf7d, type: 3}
+  mergeArea: {fileID: 4217081344400460331}
+  mergeResult: {fileID: 4217081344923806991}
