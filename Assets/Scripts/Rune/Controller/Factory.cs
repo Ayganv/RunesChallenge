@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Rune.Model;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Rune.Controller
 {
@@ -19,6 +21,14 @@ namespace Rune.Controller
                 var instance = Object.Instantiate(_prefab, parent);
                 instance.GetComponent<View.Rune>().SetUp(data); 
             }
+        }
+        
+        public GameObject InstantiateRune(Transform parent, Data data)
+        {
+            var instance = Object.Instantiate(_prefab, parent);
+            instance.GetComponent<View.Rune>().SetUp(data);
+            instance.GetComponent<View.Rune>().ListenToRuneMove();
+            return instance;
         }
     }
 }

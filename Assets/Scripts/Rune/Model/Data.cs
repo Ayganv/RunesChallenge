@@ -10,10 +10,16 @@ namespace Rune.Model
         [SerializeField] private Type runeType;
         private int _amount;
         public event Action<int> OnAmountChanged;
+        public event Action<bool> OnRuneMoved;
 
         private void OnValidate()
         {
             _amount = 0;
+        }
+
+        public void RuneMoved(bool state)
+        {
+            OnRuneMoved?.Invoke(state);
         }
 
         public Rarity Rarity => rarity;

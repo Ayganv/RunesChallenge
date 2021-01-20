@@ -1,4 +1,5 @@
-﻿using Rune.Controller;
+﻿using System;
+using Rune.Controller;
 using Rune.Model;
 using UnityEngine;
 using UnityEngine.Events;
@@ -19,6 +20,19 @@ namespace Rune.View {
             UpdateImages();
         }
 
+        public void ListenToRuneMove()
+        {
+            data.OnRuneMoved += Destroy;
+        }
+
+        private void Destroy(bool state)
+        {
+            if (state == false)
+            {
+                GameObject.Destroy(gameObject);
+                data.OnRuneMoved -= Destroy;
+            }
+        }
 
         private void UpdateImages() {
             rarity.sprite = data.Rarity.Sprite;

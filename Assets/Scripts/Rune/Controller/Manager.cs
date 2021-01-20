@@ -1,11 +1,13 @@
-﻿using Rune.Model;
+﻿using System;
+using Rune.Model;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Rune.Controller {
     public class Manager : MonoBehaviour {
         public Config config;
         public GameObject runePrefab;
-        public Transform mergeArea;
+        public Transform mergeArea, mergeResult;
         Merge _merge;
         private Purchase _purchase;
         private Factory _factory;
@@ -19,7 +21,7 @@ namespace Rune.Controller {
 
 
         public void DoPurchase() {
-            foreach (var data in _purchase.PurchaseRandomRunes(50, config.GetDatasOfRarity(config.Rarity(Random.Range(0, 5))))) {
+            foreach (var data in _purchase.PurchaseRandomRunes(3, config.GetDatasOfRarity(config.Rarity(Random.Range(0, 2))))) {
                 Debug.Log(data.Rarity);
                 Debug.Log(data);
             }
@@ -31,9 +33,10 @@ namespace Rune.Controller {
             _factory.InstantiateRunes(transform, config.runeDatas);
         }
 
-        public void AddToMergeArea(View.Rune rune) {
+        public void AddToMergeArea(View.Rune rune)
+        {
             if (this._merge.mergeData.AddRune(rune.data))
-                this._factory.InstantiateRunes(this.mergeArea, new[] {rune.data});
+                this._factory.InstantiateRune(this.mergeArea, rune.data);
             //TODO
         }
 
@@ -46,7 +49,7 @@ namespace Rune.Controller {
         }
 
         public void Merge() {
-            _factory.InstantiateRunes(transform, new[] {_merge.RuneMerge(config)});
+            _factory.InstantiateRunes(mergeResult, new[] {_merge.RuneMerge(config)});
         }
     }
 }

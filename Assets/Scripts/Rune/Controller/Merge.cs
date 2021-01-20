@@ -36,7 +36,8 @@ namespace Rune.Controller {
                     return null;
             }
 
-            this.mergeData.ClearRunes();
+            runeData.Amount++;
+            this.mergeData.SuccessfulMerge();
             return runeData;
         }
 
