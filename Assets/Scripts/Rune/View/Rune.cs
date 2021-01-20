@@ -10,6 +10,8 @@ namespace Rune.View {
         public UnityEvent<string> onAmountChangedString;
         public Image rarity, type, background;
         public Data data;
+        public GameObject QuantityDisplay;
+        
 
         public void SetUp(Data assignedData) {
             data = assignedData;
@@ -25,5 +27,10 @@ namespace Rune.View {
             type.sprite = data.RuneType.Sprite;
             background.color = data.RuneType.Color;
         }
+
+        public void QuantityDisplayTextToggle(bool isActive){
+            QuantityDisplay.SetActive(isActive);
+        }
+
     }
 }
